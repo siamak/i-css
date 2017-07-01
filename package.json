@@ -1,0 +1,44 @@
+{
+  "name": "i-css",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "devDependencies": {
+    "react-scripts": "1.0.10"
+  },
+  "dependencies": {
+    "free-style": "^2.3.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "scripts": {
+    "start": "NODE_PATH=src PORT=8080 react-scripts start",
+    "build": "NODE_PATH=src react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "compile": "NODE_ENV=production babel src/i-css --out-dir dist --copy-files",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irom-io/jcss.git"
+  },
+  "keywords": [
+    "es6",
+    "css in js",
+    "css-modules",
+    "css",
+    "javascript",
+    "BEM"
+  ],
+  "author": "Roman Orlovskiy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irom-io/x-block/issues"
+  },
+  "homepage": "https://github.com/irom-io/x-block#readme",
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  }
+}
