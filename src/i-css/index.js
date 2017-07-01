@@ -31,13 +31,13 @@ export const addStyles = (styles) => {
 
     for (key in styles) {
         if (styles.hasOwnProperty(key)) {
-            ((key) => {
+            ((key, Style) => {
                 const className = Style.registerStyle(styles[key], key);
 
                 styles[key].toString = () => {
                     return className;
                 };
-            })(key);
+            })(key, Style);
         }
     }
 };
@@ -45,4 +45,5 @@ export const addStyles = (styles) => {
 export const renderStyles = (styleElement) => {
     styleElement.innerHTML = '';
     styleElement.innerHTML = Style.getStyles();
+    Style = freeStyle.create(); //Clear styles for hot reload
 };

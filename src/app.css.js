@@ -2,7 +2,7 @@ import {addStyles} from 'i-css';
 
 const app = {
     wrapper: {
-        backgroundColor: 'blue'
+        backgroundColor: 'red'
     }
 };
 addStyles(app);
