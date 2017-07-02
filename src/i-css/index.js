@@ -32,14 +32,21 @@ export const addStyles = (styles) => {
     for (key in styles) {
         if (styles.hasOwnProperty(key)) {
             ((key, Style) => {
+                let style = styles[key];
+                if (typeof style === 'function') {
+                    style = style.bind(styles);
+                    style = style();
+                }
+
+                styles[key] = style;
                 if (key !== '_global') {
-                    const className = Style.registerStyle(styles[key], key);
+                    const className = Style.registerStyle(style, key);
 
                     styles[key].toString = () => {
                         return className;
                     };
                 } else {
-                    Style.registerCss(styles[key]);
+                    Style.registerCss(style);
                 }
             })(key, Style);
         }
