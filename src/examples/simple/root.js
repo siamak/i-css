@@ -1,5 +1,5 @@
 import React from 'react';
-import App from 'app';
+import App from './app';
 import {renderCss} from 'i-css';
 
 class Root extends React.Component {
