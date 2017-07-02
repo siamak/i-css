@@ -1,7 +1,8 @@
 ## I-CSS (CSS in JS)
+It is npm package, for writing css in js.
 
 ### CSS modules in box.
-It is npm package, for writing css in js, based on [free-style](https://github.com/blakeembrey/free-style)
+Based on [free-style](https://github.com/blakeembrey/free-style)
 <br />[Demo](https://irom-io.github.io/i-css/)
 <br />[Demo source](https://github.com/irom-io/i-css/blob/master/src/examples/simple/app.js)
 
