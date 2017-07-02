@@ -14,7 +14,7 @@ $ npm install i-css --save
 
 ```javascript
 import React from 'react';
-import {cn, addStyles} from 'i-css';
+import {addStyles} from 'i-css';
 
 const app = {
     wrapper: {
