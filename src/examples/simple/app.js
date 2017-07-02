@@ -2,6 +2,16 @@ import React from 'react';
 import {addStyles} from 'i-css';
 
 const app = {
+    wrapper() {
+        return {
+            ...this.full,
+            fontFamily: 'myriad-pro',
+            backgroundColor: 'blue',
+            [`&:hover .${this.text}`]: {
+                color:  'yellow'
+            }
+        }
+    },
     _rules: {
         '@font-face': {
             fontFamily: 'myriad-pro',
@@ -14,10 +24,6 @@ const app = {
             fontStyle: 'normal',
             fontWeight: 'normal'
         }
-    },
-    full: {
-        width: '100%',
-        height: '100%'
     },
     _animationSpinner: {
         '0%': { 'transform': 'rotate(0deg)' },
@@ -32,6 +38,10 @@ const app = {
             }
         }
     },
+    full: {
+        width: '100%',
+        height: '100%'
+    },
     text: {
         color: 'green'
     },
@@ -45,16 +55,6 @@ const app = {
             width: 56,
             height: 56,
             'animation': `${this._animationSpinner} 2s linear infinite`
-        }
-    },
-    wrapper() {
-        return {
-            ...this.full,
-            fontFamily: 'myriad-pro',
-            backgroundColor: 'blue',
-            [`&:hover .${this.text}`]: {
-                color:  'yellow'
-            }
         }
     }
 };
