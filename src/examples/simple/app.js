@@ -39,6 +39,7 @@ const app = {
     header() {
         return {
             ...this.textCenter,
+            display: 'block',
             position: 'relative',
             padding: '40px 0 40px 0',
             top: '30vh',
@@ -89,18 +90,21 @@ class App extends React.Component {
     render() {
         return (
             <div className={app.wrapper}>
-                <div className={app.header}>
+                <a
+                    href="https://www.npmjs.com/package/i-css"
+                    className={app.header}
+                >
                     <h1>
-                        <a href="#">I - CSS</a>
+                        I - CSS
                     </h1>
                     <div className={app.spinner} />
                     <div className={cn(app.textCenter, app.textMd, app.indent)}>
-                        <a href="#">CSS in JS</a>!
+                        CSS in JS!
                     </div>
                     <div className={app.textCenter}>
-                        <a href="#">Don't wait loading, try it now</a>!
+                        Don't wait loading, try it now!
                     </div>
-                </div>
+                </a>
             </div>
         );
     }
