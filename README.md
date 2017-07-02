@@ -87,3 +87,29 @@ const app = {
 addStyles(app);
 //...
 ```
+
+## Animation
+```javascript
+const app = {
+    //...
+    _animationSpinner: {
+        '0%': { 'transform': 'rotate(0deg)' },
+        '100%': { 'transform': 'rotate(360deg)' }
+    },
+    spinner() {
+        const size = 56;
+        const borderWidth = '7px';
+        const color = '#ff6d4a';
+
+        return {
+            width: size,
+            height: size,
+            border: `${borderWidth} solid ${color}`,
+            'animation': `${this._animationSpinner} 2s linear infinite`
+        }
+    }
+    //...
+};
+addStyles(app);
+//...
+```
