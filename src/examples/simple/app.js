@@ -29,19 +29,24 @@ const app = {
             ...this.full,
             fontFamily: 'myriad-pro',
             background: `url(${require('./images/bg.jpeg')})`,
-            backgroundPosition: 'cover',
-            [`&:hover .${this.text}`]: {
-                color:  'yellow'
-            }
+            backgroundPosition: 'cover'
         }
     },
     header() {
         return {
             ...this.textCenter,
-            paddingTop: '30vh',
+            position: 'relative',
+            padding: '40px 0 40px 0',
+            top: '30vh',
             color: '#ffffff',
+            backgroundColor: 'rgba(0, 0, 0, 0.2)',
+            transition: `300ms linear`,
+            boxShadow: '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
             '& h1': {
                 fontSize: 36
+            },
+            '&:hover': {
+                backgroundColor: 'rgba(0, 0, 0, 0.5)'
             }
         }
     },
