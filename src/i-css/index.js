@@ -41,10 +41,16 @@ export const addStyles = (styles) => {
                 styles[key] = {...style};
                 if (key !== '_global') {
                     delete style.toString;
-                    const className = Style.registerStyle(style, key);
+                    let name;
+
+                    if (key.indexOf('animation') === 0) {
+                        name = Style.registerKeyframes(style, key);
+                    } else {
+                        name = Style.registerStyle(style, key);
+                    }
 
                     styles[key].toString = () => {
-                        return className;
+                        return name;
                     };
                 } else {
                     for (let subKey in style) {
@@ -62,6 +68,5 @@ export const addStyles = (styles) => {
 export const renderCss = (styleElement) => {
     styleElement.innerHTML = '';
     styleElement.innerHTML = Style.getStyles();
-    console.log(styleElement.innerHTML)
     Style = freeStyle.create(); //Clear styles for hot reload
 };
