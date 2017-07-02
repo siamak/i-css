@@ -29,7 +29,11 @@ const app = {
             ...this.full,
             fontFamily: 'myriad-pro',
             background: `url(${require('./images/bg.jpeg')})`,
-            backgroundPosition: 'cover'
+            backgroundPosition: 'cover',
+            '& a': {
+                color: '#ffffff',
+                textDecoration: 'none'
+            }
         }
     },
     header() {
@@ -87,14 +91,14 @@ class App extends React.Component {
             <div className={app.wrapper}>
                 <div className={app.header}>
                     <h1>
-                        I - CSS
+                        <a href="#">I - CSS</a>
                     </h1>
                     <div className={app.spinner} />
                     <div className={cn(app.textCenter, app.textMd, app.indent)}>
-                        CSS in JS
+                        <a href="#">CSS in JS</a>!
                     </div>
                     <div className={app.textCenter}>
-                        Don't wait loading, try it now!
+                        <a href="#">Don't wait loading, try it now</a>!
                     </div>
                 </div>
             </div>
