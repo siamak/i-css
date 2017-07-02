@@ -43,7 +43,7 @@ export const addStyles = (styles) => {
                     delete style.toString;
                     let name;
 
-                    if (key.indexOf('animation') === 0) {
+                    if (key.indexOf('keyframes_') === 0) {
                         name = Style.registerKeyframes(style, key);
                     } else {
                         name = Style.registerStyle(style, key);
