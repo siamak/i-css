@@ -20,7 +20,7 @@ import React from 'react';
 import {addStyles} from 'i-css';
 
 const app = {
-    wrapper: { //.wrapper_{hash}
+    wrapper: { //css modules className: .wrapper_{hash}
         width: '100%',
         border: `1px solid orange`
     }
@@ -66,6 +66,22 @@ const app = {
             fontWeight: 'normal'
         }
     }
+    //...
+};
+addStyles(app);
+//...
+```
+
+## Global variables
+```javascript
+const app = {
+    //...
+    _global: {
+        'html, body, #root': {
+            padding: 0,
+            margin: 0
+        }
+    },
     //...
 };
 addStyles(app);
