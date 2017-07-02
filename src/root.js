@@ -1,6 +1,6 @@
 import React from 'react';
 import App from 'app';
-import {renderCSS} from 'i-css';
+import {renderCss} from 'i-css';
 
 class Root extends React.Component {
     constructor(p_) {
@@ -9,7 +9,7 @@ class Root extends React.Component {
         this.state = {};
     }
     componentWillMount() {
-        renderCSS(document.getElementById('cssRoot'));
+        renderCss(document.getElementById('rootCss'));
     }
     render() {
         return (

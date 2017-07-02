@@ -32,18 +32,23 @@ export const addStyles = (styles) => {
     for (key in styles) {
         if (styles.hasOwnProperty(key)) {
             ((key, Style) => {
-                const className = Style.registerStyle(styles[key], key);
+                if (key !== '_global') {
+                    const className = Style.registerStyle(styles[key], key);
 
-                styles[key].toString = () => {
-                    return className;
-                };
+                    styles[key].toString = () => {
+                        return className;
+                    };
+                } else {
+                    Style.registerCss(styles[key]);
+                }
             })(key, Style);
         }
     }
 };
 
-export const renderCSS = (styleElement) => {
+export const renderCss = (styleElement) => {
     styleElement.innerHTML = '';
     styleElement.innerHTML = Style.getStyles();
+    console.log(styleElement.innerHTML)
     Style = freeStyle.create(); //Clear styles for hot reload
 };
