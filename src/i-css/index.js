@@ -9,7 +9,7 @@ export const cn = function() {
         if (typeof className === 'string') {
             classNames.push(className);
         } else if (typeof className === 'object') {
-            if (className.toString().indexOf('__') !== -1) {
+            if (className.toString) {
                 classNames.push(className.toString());
             } else {
                 for (let key in className) {
