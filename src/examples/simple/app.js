@@ -2,6 +2,19 @@ import React from 'react';
 import {addStyles} from 'i-css';
 
 const app = {
+    _rules: {
+        '@font-face': {
+            fontFamily: 'myriad-pro',
+            src: `
+                url(${require('./font/myriad-pro__regular.eot')}), 
+                url(${require('./font/myriad-pro__regular.eot?#iefix')}) format('embedded-opentype'),
+                url(${require('./font/myriad-pro__regular.woff')}) format('woff'),
+                url(${require('./font/myriad-pro__regular.ttf')}) format('truetype')
+            `,
+            fontStyle: 'normal',
+            fontWeight: 'normal'
+        }
+    },
     full: {
         width: '100%',
         height: '100%'
@@ -37,7 +50,8 @@ const app = {
     wrapper() {
         return {
             ...this.full,
-            backgroundColor: 'red',
+            fontFamily: 'myriad-pro',
+            backgroundColor: 'blue',
             [`&:hover .${this.text}`]: {
                 color:  'yellow'
             }
