@@ -66,18 +66,18 @@ const app = {
         '100%': { 'transform': 'rotate(360deg)' }
     },
     spinner() {
-        const width = '7px';
+        const size = 56;
+        const borderWidth = '7px';
         const color = '#ff6d4a';
 
         return {
-            ...this.textCenter,
-            border: `${width} solid #inherit`,
+            width: size,
+            height: size,
+            border: `${borderWidth} solid inherit`,
             borderRadius: '50%',
-            borderTop: `${width} solid ${color}`,
-            borderRight: `${width} solid ${color}`,
-            borderBottom: `${width} solid ${color}`,
-            width: 56,
-            height: 56,
+            borderTop: `${borderWidth} solid ${color}`,
+            borderRight: `${borderWidth} solid ${color}`,
+            borderBottom: `${borderWidth} solid ${color}`,
             margin: '0 auto',
             'animation': `${this._animationSpinner} 2s linear infinite`
         }
