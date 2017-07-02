@@ -40,6 +40,7 @@ export const addStyles = (styles) => {
 
                 styles[key] = style;
                 if (key !== '_global') {
+                    delete style.toString;
                     const className = Style.registerStyle(style, key);
 
                     styles[key].toString = () => {
