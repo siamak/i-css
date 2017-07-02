@@ -47,6 +47,11 @@ export const addStyles = (styles) => {
                         return className;
                     };
                 } else {
+                    for (let subKey in style) {
+                        if (style.hasOwnProperty(subKey)) {
+                            delete style[subKey].toString;
+                        }
+                    }
                     Style.registerCss(style);
                 }
             })(key, Style);
