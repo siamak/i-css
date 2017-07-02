@@ -6,16 +6,19 @@ const app = {
         height: '100%'
     },
     _global() {
-        console.log(this);
         return {
-            'html,body': {
+            'html, body, #root': {
+                ...this.full,
                 padding: 0,
                 margin: 0
             }
         }
     },
-    wrapper: {
-        backgroundColor: 'red'
+    wrapper() {
+        return {
+            ...this.full,
+            backgroundColor: 'red'
+        }
     }
 };
 addStyles(app);
