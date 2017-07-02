@@ -15,10 +15,16 @@ const app = {
             }
         }
     },
+    text: {
+        color: 'green'
+    },
     wrapper() {
         return {
             ...this.full,
-            backgroundColor: 'red'
+            backgroundColor: 'red',
+            [`&:hover .${this.text}`]: {
+                color:  'yellow'
+            }
         }
     }
 };
@@ -28,7 +34,9 @@ class App extends React.Component {
     render() {
         return (
             <div className={app.wrapper}>
-                App
+                <div className={app.text}>
+                    App
+                </div>
             </div>
         );
     }
