@@ -1,9 +1,10 @@
 {
   "name": "i-css",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "dist/index.js",
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
     "react-scripts": "1.0.10"
   },
   "dependencies": {
@@ -39,7 +40,8 @@
   "homepage": "https://github.com/irom-io/x-block#readme",
   "babel": {
     "presets": [
-      "react-app"
+      "react-app",
+      "es2015"
     ]
   }
 }
