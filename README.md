@@ -32,9 +32,9 @@ const App = () => <div className={app.wrapper}></div>
 
 ### Mix styles
 ```javascript
-//...
 const app = {
-    wrapper() {
+    //...
+    wrapper() { //you can use function or plain object
         return {
             ...this.full,
             border: `1px solid orange`
@@ -44,6 +44,29 @@ const app = {
         width: '100%',
         height: '100%'
     }
+    //...
+};
+addStyles(app);
+```
+
+### Rules
+```javascript
+const app = {
+    //...
+    _rules: {
+        '@font-face': {
+            fontFamily: 'myriad-pro',
+            src: `
+                url(${require('./font/myriad-pro__regular.eot')}), 
+                url(${require('./font/myriad-pro__regular.eot?#iefix')}) format('embedded-opentype'),
+                url(${require('./font/myriad-pro__regular.woff')}) format('woff'),
+                url(${require('./font/myriad-pro__regular.ttf')}) format('truetype')
+            `,
+            fontStyle: 'normal',
+            fontWeight: 'normal'
+        }
+    }
+    //...
 };
 addStyles(app);
 //...
