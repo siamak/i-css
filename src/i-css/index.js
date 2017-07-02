@@ -39,11 +39,24 @@ export const addStyles = (styles) => {
                 }
 
                 styles[key] = {...style};
-                if (key !== '_global') {
+                if (key === '_global') {
+                    for (let subKey in style) {
+                        if (style.hasOwnProperty(subKey)) {
+                            delete style[subKey].toString;
+                        }
+                    }
+                    Style.registerCss(style);
+                } else if (key === '_rules') {
+                    for (let subKey in style) {
+                        if (style.hasOwnProperty(subKey)) {
+                            Style.registerRule(subKey, style[subKey]);
+                        }
+                    }
+                } else {
                     delete style.toString;
                     let name;
 
-                    if (key.indexOf('keyframes_') === 0) {
+                    if (key.indexOf('_animation') === 0) {
                         name = Style.registerKeyframes(style, key);
                     } else {
                         name = Style.registerStyle(style, key);
@@ -52,13 +65,6 @@ export const addStyles = (styles) => {
                     styles[key].toString = () => {
                         return name;
                     };
-                } else {
-                    for (let subKey in style) {
-                        if (style.hasOwnProperty(subKey)) {
-                            delete style[subKey].toString;
-                        }
-                    }
-                    Style.registerCss(style);
                 }
             })(key, Style);
         }

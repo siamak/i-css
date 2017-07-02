@@ -6,7 +6,7 @@ const app = {
         width: '100%',
         height: '100%'
     },
-    keyframes_Spinner: {
+    _animationSpinner: {
         '0%': { 'transform': 'rotate(0deg)' },
         '100%': { 'transform': 'rotate(360deg)' }
     },
@@ -31,7 +31,7 @@ const app = {
             borderBottom: `4px solid green`,
             width: 56,
             height: 56,
-            'animation': `${this.keyframes_Spinner} 2s linear infinite`
+            'animation': `${this._animationSpinner} 2s linear infinite`
         }
     },
     wrapper() {
