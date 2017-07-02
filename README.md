@@ -17,7 +17,7 @@ $ npm install i-css --save
 ### Basic
 ```javascript
 import React from 'react';
-import {addStyles} from 'i-css';
+import {addStyles, renderCss} from 'i-css';
 
 const app = {
     wrapper: { //css modules className: .wrapper_{hash}
@@ -26,6 +26,7 @@ const app = {
     }
 };
 addStyles(app);
+renderCss(document.getElementById('rootCss')); //call it once in root component
 
 const App = () => <div className={app.wrapper}></div>
 ```
