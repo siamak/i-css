@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "main": "dist/index.js",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "react-scripts": "1.0.10"
   },
   "dependencies": {
