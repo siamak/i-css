@@ -9,7 +9,7 @@ export const cn = function() {
         if (typeof className === 'string') {
             classNames.push(className);
         } else if (typeof className === 'object') {
-            if (className.toString) {
+            if (className.__isICSS) {
                 classNames.push(className.toString());
             } else {
                 for (let key in className) {
@@ -40,6 +40,7 @@ export const addStyles = (styles) => {
             for (let subKey in style) {
                 if (style.hasOwnProperty(subKey)) {
                     delete style[subKey].toString;
+                    delete style[subKey].__isICSS;
                 }
             }
             Style.registerCss(style);
@@ -51,6 +52,7 @@ export const addStyles = (styles) => {
             }
         } else {
             delete style.toString;
+            delete style.__isICSS;
             let name;
 
             if (key.indexOf('_animation') === 0) {
@@ -59,6 +61,7 @@ export const addStyles = (styles) => {
                 name = Style.registerStyle(style, key);
             }
 
+            styles[key].__isICSS = true;
             styles[key].toString = () => {
                 return name;
             };
