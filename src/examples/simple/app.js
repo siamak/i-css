@@ -97,7 +97,7 @@ class App extends React.Component {
                     <h1>
                         I - CSS
                     </h1>
-                    <div className={app.spinner} />
+                    <div className={app.spinner}></div>
                     <div className={cn(app.textCenter, app.textMd, app.indent)}>
                         CSS in JS!
                     </div>
