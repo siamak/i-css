@@ -50,6 +50,28 @@ const app = {
 addStyles(app);
 ```
 
+### Pseudo selectors & css cascade
+```javascript
+const app = {
+    //...
+    wrapper() {
+        return {
+           '&:hover': { //pseudo selectors
+               backgroundColor: '#ffffff'
+           },
+           [`&:hover .${this.text}`]: {//css cascade
+               color: '#000000'
+           }
+       }
+    },
+    text: {
+        color: 'red'
+    }
+    //...
+};
+addStyles(app);
+```
+
 ### Rules
 ```javascript
 const app = {
