@@ -88,5 +88,4 @@ export const addStyles = (styles) => {
 export const renderCss = (styleElement) => {
     styleElement.innerHTML = '';
     styleElement.innerHTML = Style.getStyles();
-    Style = freeStyle.create(); //Clear styles for hot reload
 };
