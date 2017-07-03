@@ -102,7 +102,7 @@ class App extends React.Component {
                         CSS in JS!
                     </div>
                     <div className={app.textCenter}>
-                        Don't wait loading, try it now!
+                        {`Don't wait loading, try it now!`}
                     </div>
                 </a>
             </div>
