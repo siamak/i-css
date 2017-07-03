@@ -29,7 +29,8 @@ const app = {
             ...this.full,
             fontFamily: 'myriad-pro',
             background: `url(${require('./images/bg.jpeg')})`,
-            backgroundPosition: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
             '& a': {
                 color: '#ffffff',
                 textDecoration: 'none'
