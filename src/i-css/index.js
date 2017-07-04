@@ -89,3 +89,11 @@ export const renderCss = (styleElement) => {
     styleElement.innerHTML = '';
     styleElement.innerHTML = Style.getStyles();
 };
+
+if (module.hot) {
+    module.hot.status((status) => {
+        if (status === 'apply') {
+            Style = freeStyle.create();
+        }
+    });
+}
