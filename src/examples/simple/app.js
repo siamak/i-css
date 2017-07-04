@@ -1,5 +1,5 @@
 import React from 'react';
-import {cn, addStyles} from 'i-css';
+import {cn, addStyles, renderCss} from 'i-css';
 
 const app = {
     _rules: {
@@ -24,7 +24,7 @@ const app = {
             }
         }
     },
-    wrapper() {
+    wrapper() { //css modules className: .wrapper_{hash}
         return {
             ...this.full,
             fontFamily: 'myriad-pro',
@@ -86,6 +86,9 @@ const app = {
     }
 };
 addStyles(app);
+
+//call it once in app root component
+renderCss(document.getElementById('rootCss'));
 
 class App extends React.Component {
     render() {

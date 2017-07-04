@@ -4,7 +4,9 @@ It is npm package, for writing css in js.
 ### CSS modules in box.
 Based on [free-style](https://github.com/blakeembrey/free-style)
 <br />[Demo](https://irom-io.github.io/i-css/)
-<br />[Demo source](https://github.com/irom-io/i-css/blob/master/src/examples/simple/app.js)
+<br />
+[Demo app component source](https://github.com/irom-io/i-css/blob/master/src/examples/simple/app.js)
+[Demo index file](https://github.com/irom-io/i-css/blob/master/src/examples/simple/index.js) (Example for hot-reloading)
 
 ## Install
 
