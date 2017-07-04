@@ -51,6 +51,13 @@ const app = {
 addStyles(app);
 ```
 
+### Mix classNames
+```javascript
+import {cn} from 'i-css';
+//...
+const App = () => <div className={cn(app.wrapper, app.full, {[app.greenBack]: this.state.isGreen})}>
+```
+
 ### Pseudo selectors & css cascade
 ```javascript
 const app = {
