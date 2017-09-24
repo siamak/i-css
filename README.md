@@ -134,7 +134,7 @@ const app = addStyles({
 
 ## Animation
 ```javascript
-const app = {
+const app = addStyles({
     //...
     _animation: {
         spinner: {
@@ -155,7 +155,6 @@ const app = {
         }
     }
     //...
-};
-addStyles(app);
+});
 //...
 ```
