@@ -33,6 +33,15 @@ const App = () => <div className={app.wrapper}></div>
 
 ### Mix styles
 ```javascript
+const grid = addStyles({
+    fullWidth: {
+        width: '100%'
+    },
+    fullHeight: {
+        height: '100%'
+    }
+})
+
 const app = addStyles({
     //...
     wrapper() { //you can use function or plain object
@@ -42,11 +51,17 @@ const app = addStyles({
         }
     },
     full: {
-        width: '100%',
-        height: '100%'
+        ...grid.fullWidth,
+        ...grid.fullHeight //Mix as native object and use it as className
     }
     //...
 });
+
+const App = () => (
+    <div className={app.wrapper}>
+        <div className={grid.fullHeight}></div>
+    </div>
+)
 ```
 
 ### Mix classNames
@@ -121,9 +136,11 @@ const app = addStyles({
 ```javascript
 const app = {
     //...
-    _animationSpinner: {
-        '0%': { 'transform': 'rotate(0deg)' },
-        '100%': { 'transform': 'rotate(360deg)' }
+    _animation: {
+        spinner: {
+            '0%': { 'transform': 'rotate(0deg)' },
+            '100%': { 'transform': 'rotate(360deg)' }   
+        }
     },
     spinner() {
         const size = 56;
@@ -134,7 +151,7 @@ const app = {
             width: size,
             height: size,
             border: `${borderWidth} solid ${color}`,
-            'animation': `${this._animationSpinner} 2s linear infinite`
+            'animation': `${this._animation.spinner} 2s linear infinite`
         }
     }
     //...
