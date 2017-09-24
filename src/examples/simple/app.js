@@ -15,13 +15,12 @@ const app = addStyles({
             fontWeight: 'normal'
         }
     },
-    _global() {
-        return {
-            'html, body, #root': {
-                ...this.full,
-                padding: 0,
-                margin: 0
-            }
+    _global: {
+        'html, body, #root': {
+            width: '100%',
+            height: '100%',
+            padding: 0,
+            margin: 0
         }
     },
     wrapper() { //css modules className: .wrapper_{hash}
@@ -63,9 +62,11 @@ const app = addStyles({
     textCenter: { textAlign: 'center' },
     textMd: { fontSize: 22 },
     indent: { padding: 10 },
-    _animationSpinner: {
-        '0%': { 'transform': 'rotate(0deg)' },
-        '100%': { 'transform': 'rotate(360deg)' }
+    _animation: {
+        spinner: {
+            '0%': { 'transform': 'rotate(0deg)' },
+            '100%': { 'transform': 'rotate(360deg)' }
+        }
     },
     spinner() {
         const size = 56;
@@ -81,7 +82,7 @@ const app = addStyles({
             borderRight: `${borderWidth} solid ${color}`,
             borderBottom: `${borderWidth} solid ${color}`,
             margin: '0 auto',
-            'animation': `${this._animationSpinner} 2s linear infinite`
+            'animation': `${this._animation.spinner} 2s linear infinite`
         }
     }
 });

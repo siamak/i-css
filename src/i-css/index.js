@@ -51,16 +51,26 @@ export const addStyles = (innerStyles) => {
                     Style.registerRule(subKey, style[subKey]);
                 }
             }
+        } else if (key === '_animation') {
+            for (let subKey in style) {
+                if (style.hasOwnProperty(subKey)) {
+                    delete style[subKey].toString;
+                    delete style[subKey].__isICSS;
+                    let name;
+                    name = Style.registerKeyframes(style[subKey], subKey);
+
+                    styles[key][subKey].__isICSS = true;
+                    styles[key][subKey].toString = () => {
+                        return name;
+                    };
+                }
+            }
         } else {
             delete style.toString;
             delete style.__isICSS;
             let name;
 
-            if (key.indexOf('_animation') === 0) {
-                name = Style.registerKeyframes(style, key);
-            } else {
-                name = Style.registerStyle(style, key);
-            }
+            name = Style.registerStyle(style, key);
 
             styles[key].__isICSS = true;
             styles[key].toString = () => {
