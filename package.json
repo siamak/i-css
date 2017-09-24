@@ -10,7 +10,7 @@
     "react-dom": "^15.6.1"
   },
   "dependencies": {
-    "free-style": "^2.3.1"
+    "free-style": "^2.4.1"
   },
   "scripts": {
     "start": "NODE_PATH=src PORT=8080 react-scripts start",
