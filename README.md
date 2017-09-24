@@ -20,13 +20,12 @@ $ npm install i-css --save
 import React from 'react';
 import {addStyles, renderCss} from 'i-css';
 
-const app = {
+const app = addStyles({
     wrapper: { //css modules className: .wrapper_{hash}
         width: '100%',
         border: `1px solid orange`
     }
-};
-addStyles(app);
+});
 renderCss(document.getElementById('rootCss')); //call it once in root component
 
 const App = () => <div className={app.wrapper}></div>
@@ -34,7 +33,7 @@ const App = () => <div className={app.wrapper}></div>
 
 ### Mix styles
 ```javascript
-const app = {
+const app = addStyles({
     //...
     wrapper() { //you can use function or plain object
         return {
@@ -47,8 +46,7 @@ const app = {
         height: '100%'
     }
     //...
-};
-addStyles(app);
+});
 ```
 
 ### Mix classNames
@@ -60,7 +58,7 @@ const App = () => <div className={cn(app.wrapper, app.full, {[app.greenBack]: th
 
 ### Pseudo selectors & css cascade
 ```javascript
-const app = {
+const app = addStyles({
     //...
     wrapper() {
         return {
@@ -76,13 +74,12 @@ const app = {
         color: 'red'
     }
     //...
-};
-addStyles(app);
+});
 ```
 
 ### Rules
 ```javascript
-const app = {
+const app = addStyles({
     //...
     _rules: {
         '@font-face': {
@@ -98,14 +95,13 @@ const app = {
         }
     }
     //...
-};
-addStyles(app);
+});
 //...
 ```
 
 ## Global variables
 ```javascript
-const app = {
+const app = addStyles({
     //...
     _global: {
         'html, body, #root': {
@@ -113,9 +109,11 @@ const app = {
             margin: 0
         }
     },
+    body: {
+        backgroundColor: 'blue'
+    }
     //...
-};
-addStyles(app);
+});
 //...
 ```
 
