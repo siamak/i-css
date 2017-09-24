@@ -26,7 +26,8 @@ export const cn = function() {
     return classNames.join(' ');
 };
 
-export const addStyles = (styles) => {
+export const addStyles = (innerStyles) => {
+    const styles = {...innerStyles};
     let key;
     const mapItem = (key, Style) => {
         let style = styles[key];
@@ -83,6 +84,8 @@ export const addStyles = (styles) => {
             }
         }
     }
+
+    return styles;
 };
 
 export const renderCss = (styleElement) => {

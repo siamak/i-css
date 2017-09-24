@@ -1,7 +1,7 @@
 import React from 'react';
 import {cn, addStyles, renderCss} from 'i-css';
 
-const app = {
+const app = addStyles({
     _rules: {
         '@font-face': {
             fontFamily: 'myriad-pro',
@@ -84,8 +84,7 @@ const app = {
             'animation': `${this._animationSpinner} 2s linear infinite`
         }
     }
-};
-addStyles(app);
+});
 
 //call it once in app root component
 renderCss(document.getElementById('rootCss'));
