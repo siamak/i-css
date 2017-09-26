@@ -130,10 +130,10 @@ const app = addStyles({
         'html, body, #root': {
             padding: 0,
             margin: 0
+        },
+        body: {
+            backgroundColor: 'blue'
         }
-    },
-    body: {
-        backgroundColor: 'blue'
     }
     //...
 });
