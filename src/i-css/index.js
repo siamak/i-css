@@ -99,6 +99,8 @@ export const addStyles = (innerStyles) => {
 };
 
 export const renderCss = (styleElement) => {
+    if (!styleElement) return Style.getStyles();
+
     styleElement.innerHTML = '';
     styleElement.innerHTML = Style.getStyles();
 };
